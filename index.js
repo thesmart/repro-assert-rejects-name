@@ -7,8 +7,9 @@ class MyError extends Error {
 
 }
 
-assert(MyError.name);
+assert.equal(MyError.name, 'MyError');
 
+// This fails! It should pass...
 assert.rejects(() => {
   return new Promise((_, reject) => {
     reject(new MyError());
