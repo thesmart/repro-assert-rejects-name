@@ -8,6 +8,7 @@ class MyError extends Error {
 }
 
 assert.equal(MyError.name, 'MyError');
+assert.equal(new MyError().constructor.name, 'MyError');
 
 // This fails! It should pass...
 assert.rejects(() => {
